@@ -1,10 +1,11 @@
 const withPlugins = require("next-compose-plugins");
-const sassPlugin = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css')
+const withSASS = require('@zeit/next-sass');
 
 module.exports = withPlugins([
-    sassPlugin({
-        cssModules: false,
-    })
+  withCSS(withSASS({
+    cssModules: false
+  }))
 ],{
-    // distDir: 'dist'
+  // distDir: 'dist'
 });
