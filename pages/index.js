@@ -1,34 +1,29 @@
-import Head from 'next/head'
-import { FontAwesomeIcon as FAI } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { compose } from 'recompose';
 
-export default function Home() {
+import Head from '../modules/head';
+
+import { withTranslation } from '../plugins/i18next';
+
+const namespaces = ['home'];
+
+const enhance = compose(withTranslation(namespaces));
+
+const Home = enhance((props) => {
+  const { t } = props;
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Head />
 
-      <main>
-        {'Hello World!'}
-        <FAI icon={['fas', 'external-link-alt']} fixedWidth />
-      </main>
-    </div>
-  )
-}
+      <div id="page-home">{t('home:hello')}</div>
+    </>
+  );
+});
 
-// export async function getStaticPaths() {
-//   // If fallback is false, then any paths not returned by getStaticPaths will result in a 404 page.
-//   return {
-//     fallback: false
-//   }
-// }
+Home.getInitialProps = async () => {
+  return {
+    namespacesRequired: namespaces,
+  };
+};
 
-// export async function getStaticProps({ params }) {
-//   const postData = await getPostData(params.id)
-//   return {
-//     props: {
-//       postData
-//     }
-//   }
-// }
+export default Home;

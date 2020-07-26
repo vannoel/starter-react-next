@@ -1,7 +1,15 @@
-import '../plugins/react-fontawesome.js'
+import React from 'react';
+import App from 'next/app';
+import '../plugins/fontawesome';
+import { appWithTranslation } from '../plugins/i18next';
 
-import '../assets/styles/index.scss'
+import '../assets/styles/index.scss';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+    return <Component {...pageProps} />;
+  }
 }
+
+export default appWithTranslation(MyApp);

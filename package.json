@@ -4,30 +4,53 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .next",
-    "dev": "next dev",
+    "clean-modules": "rimraf node_modules",
+    "dev": "npm run clean & node server.js",
     "build": "npm run clean & next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint --ext .js,.jsx .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "axios": "^0.19.2",
-    "classnames": "^2.2.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
-  },
-  "devDependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "autoprefixer": "^9.8.5",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "i18next": "^19.6.2",
+    "i18next-browser-languagedetector": "^5.0.0",
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
+    "next-i18next": "^4.5.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-i18next": "^11.7.0",
+    "recompose": "^0.30.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "node-sass": "^4.14.1",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
     "rimraf": "^3.0.2"
   }
 }

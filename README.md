@@ -16,6 +16,6 @@ npm init next-app [new project] --example "https://github.com/vannoel/starter-re
 
 ## Package List
 
-- [Next.js Documentation](https://nextjs.org/docs) 
+- [Next.js Documentation](https://nextjs.org/docs)
 
 - [Learn Next.js](https://nextjs.org/learn)
