@@ -14,8 +14,32 @@ npm init next-app [new project] --example "https://github.com/vannoel/starter-re
 
 ## File System
 
-## Package List
-
-- [Next.js Documentation](https://nextjs.org/docs)
-
-- [Learn Next.js](https://nextjs.org/learn)
+```
++-- assets/
+| +-- definitions/ (constant definitions)
+| `-- styles/ (style files)
++-- modules/ (module-type components)
++-- pages/ (page-type components for routes)
+| |-- api/ (API for routes)
+| `-- index.jsx
++-- plugins (configurations of third-party package)
++-- public
+| +-- static
+| | `-- locales/ (dictionary for i18next)
+| `-- favicon.ico
++-- .browserslistrc
++-- .env.development
++-- .env.production
++-- .eslint.js
++-- .gitignore
++-- .huskyrc.json
++-- .lintstagedrc.json
++-- .prettierignore
++-- .prettierrc.js
++-- next.config.js
++-- package.json
++-- package-lock.json
++-- postcss.config.js
++-- RREADME.md
+`-- server.js
+```
